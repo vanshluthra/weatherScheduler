@@ -1,9 +1,10 @@
 import React from "react";
 import "./App.css";
 import axios from "axios";
-import DisplayWeather from "./components/DisplayWeather";
+import Display from "./components/Display";
 import Navbar from "./components/Navbar";
-
+import fire from "./config/fire";
+import Login from "./Login";
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -24,6 +25,7 @@ class App extends React.Component {
     };
   }
   componentDidMount() {
+    this.authListener();
     (() => {
       axios
         .get("http://ip-api.com/json")
@@ -66,6 +68,17 @@ class App extends React.Component {
         });
     })();
   }
+  authListener(){
+    fire.auth().onAuthStateChanged((user)=>{
+      if(user)
+      {this.setState({user})}
+    
+    else
+    {
+       this.setState({user:null})
+    }}
+    )
+  } 
 
   //track input field
   change = (value) => {
@@ -103,9 +116,11 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
+       
         <Navbar changeRegion={this.change} changeWeather={this.changeWeather} />
         <div className="container">
-          <DisplayWeather weather={this.state.data} />
+          {this.state.user? (< Display weather={this.state.data} />):(<Login/>)}
+         
         </div>
       </div>
     );

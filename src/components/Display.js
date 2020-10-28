@@ -14,7 +14,7 @@ export default class Display extends Component {
     render() {
         return (
             <div>
-        <div className="user-weather">
+        <div className="user-weather" >
       <div className="row">
         <div className="col-md-3 weather-temp">
           <h1>
@@ -63,7 +63,7 @@ export default class Display extends Component {
       </div>
       
     </div>
-    <button onClick={this.logout}> logout</button>
+    <button onClick={this.logout}> Logout</button>
             </div>
         )
     }

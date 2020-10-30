@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import fire from '../config/fire'
+import {Link} from "react-router-dom"
 
 export default class Display extends Component {
     constructor(props)
@@ -14,8 +15,18 @@ export default class Display extends Component {
     render() {
         return (
             <div>
+             
         <div className="user-weather" >
       <div className="row">
+      <div className="col-md-6">
+        <form className="region" onSubmit={(e) => this.props.changeWeather(e)}>
+          <input
+            className="regioninput"
+            placeholder="Enter Location"
+            onChange={(e) => this.props.changeRegion(e.target.value)}
+          />
+        </form>
+      </div>
         <div className="col-md-3 weather-temp">
           <h1>
             {this.props.weather.temperature}
@@ -37,7 +48,7 @@ export default class Display extends Component {
           <p>
             <b>Wind Speed</b>(km/hr)
           </p>
-          <h2>{this.wind_speed}</h2>
+          <h2>{this.props.weather.wind_speed}</h2>
         </div>
 
         <div className="col-md-3 weather-info">
@@ -61,9 +72,10 @@ export default class Display extends Component {
           <h2>{this.props.weather.humidity}</h2>
         </div>
       </div>
-      
+      {this.props.status?(<Link to="/schedule"><button>Schedule</button></Link>):(<div></div>)}
     </div>
-    <button onClick={this.logout}> Logout</button>
+  
+    {/* <button onClick={this.logout}> Logout</button> */}
             </div>
         )
     }

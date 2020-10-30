@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import fire from "./config/fire";
 import "./login.css"
+import {Link} from "react-router-dom"
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -10,7 +11,7 @@ export default class Login extends Component {
     this.state = { email: "", password: "" };
   }
   login(e) {
-    e.preventDefault();
+    //  e.preventDefault();
     fire
       .auth()
       .signInWithEmailAndPassword(this.state.email, this.state.password)
@@ -20,6 +21,8 @@ export default class Login extends Component {
       .catch((err) => {
         console.log(err);
       });
+      // window.location.reload();
+
   }
   signup(e) {
     e.preventDefault();
@@ -41,7 +44,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <section className="login">
+      <section className="login" id="login">
         <div className="loginContainer">
           <label>Username</label>
           <input
@@ -64,34 +67,9 @@ export default class Login extends Component {
             onChange={this.handleChange}
           />
           <button onClick={this.signup}>Signup</button>
-          <button onClick={this.login}>Login</button>
+          <Link to="/"><button onClick={this.login}>Login</button></Link>
         </div>
       </section>
-
-      // <div>
-      //     <form>
-      //         <input
-      //         type="email"
-      //         id="email"
-      //         name="email"
-      //         placeholder="enter your mail"
-      //         onChange={this.handleChange}
-      //         value={this.state.email}
-      //         />
-      //         <input
-      //         name="password"
-      //         type="password"
-      //         id="password"
-      //         placeholder="enter password"
-      //         onChange={this.handleChange}
-
-      //         value={this.state.password}
-      //         />
-      //         <button onClick={this.login}>Login</button>
-      //         <button onClick={this.signup}>Signup</button>
-
-      //     </form>
-      // </div>
     );
   }
 }

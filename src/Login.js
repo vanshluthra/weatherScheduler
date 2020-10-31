@@ -49,7 +49,7 @@ export default class Login extends Component {
           <label>Username</label>
           <input
             type="text"
-            id="email"
+            id="email" 
             name="email"
             autoFocus
             required

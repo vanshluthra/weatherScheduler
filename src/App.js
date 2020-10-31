@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import fire from "./config/fire";
 import Login from "./Login";
 import{ Route, Router} from "react-router-dom";
+
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -125,9 +127,7 @@ class App extends React.Component {
         <Display weather={this.state.data} changeRegion={this.change} 
         changeWeather={this.changeWeather} status={this.state.user}/>
         )} 
-        />
-       
-       
+        />    
        
         </div>
     

@@ -4,9 +4,7 @@ import axios from "axios";
 import Display from "./components/Display";
 import Navbar from "./components/Navbar";
 import fire from "./config/fire";
-import Login from "./Login";
-import{ Route, Router} from "react-router-dom";
-
+import { Route } from "react-router-dom";
 
 class App extends React.Component {
   constructor(props) {
@@ -71,30 +69,29 @@ class App extends React.Component {
         });
     })();
   }
-  authListener(){
-    fire.auth().onAuthStateChanged((user)=>{
-      if(user)
-      {this.setState({user})}
-    
-    else
-    {
-       this.setState({user:null})
-    }}
-    )
-  } 
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.setState({ user });
+      } else {
+        this.setState({ user: null });
+      }
+    });
+  }
 
   //track input field
-  change = (value) => {
-    //console.log("Changing")
-    this.setState({ inputData: value });
-  };
+  // change = (value) => {
+  //   //console.log("Changing")
+  //   this.setState({ inputData: value });
+  // };
 
-  changeWeather = (event) => {
-    event.preventDefault();
+  changeWeather = (location1) => {
+    console.log(location1);
+
     //api call
     axios
       .get(
-        `http://api.weatherstack.com/current?access_key=9b589bec07539a0a2aac5836fb5c6906&query=${this.state.inputData}`
+        `http://api.weatherstack.com/current?access_key=9b589bec07539a0a2aac5836fb5c6906&query=${location1}`
       )
       .then((response) => {
         //console.log(response)
@@ -118,22 +115,23 @@ class App extends React.Component {
 
   render() {
     return (
-      
       <div className="App">
-       
-        <Navbar status={this.state.user}/>
-       
-        <Route path="/" component={()=>( 
-        <Display weather={this.state.data} changeRegion={this.change} 
-        changeWeather={this.changeWeather} status={this.state.user}/>
-        )} 
-        />    
-       
-        </div>
-    
-        );
+        <Navbar status={this.state.user} />
+
+        <Route
+          path="/"
+          component={() => (
+            <Display
+              weather={this.state.data}
+              changeRegion={this.change}
+              changeWeather={this.changeWeather}
+              status={this.state.user}
+            />
+          )}
+        />
+      </div>
+    );
   }
-  
 }
 
 export default App;

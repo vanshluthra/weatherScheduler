@@ -5,33 +5,35 @@ import moment from "moment";
 
 const NoteDetail = (props) => {
   const id = props.match.params.id;
-  useFirestoreConnect([{ collection: "note", doc: id,}]);
+  useFirestoreConnect([{ collection: "note", doc: id }]);
   const note = useSelector(
     ({ firestore: { data } }) => data.note && data.note[id]
   );
 
-  const noteMarkup = !isLoaded(note)?(
+  const noteMarkup = !isLoaded(note) ? (
     <div className="container section">
-    <div className="card z-depth-0">
-      <div className="card-content">
-        <span className="card-title left-align">Loading</span>
+      <div className="card z-depth-0">
+        <div className="card-content">
+          <span className="card-title left-align">Loading</span>
+        </div>
       </div>
     </div>
-  </div>
-  ): isEmpty(note) ? (
+  ) : isEmpty(note) ? (
     <div className="container section">
-    <div className="card z-depth-0">
-      <div className="card-content">
-        <span className="card-title left-align">The note content is empty!</span>
+      <div className="card z-depth-0">
+        <div className="card-content">
+          <span className="card-title left-align">
+            The note content is empty!
+          </span>
+        </div>
       </div>
     </div>
-  </div>
-  ):(
+  ) : (
     <div className="container section">
       <div className="card z-depth-0">
         <div className="card-content">
           <span className="card-title left-align">{note.title}</span>
-          <p className='left-align'>{note.content}</p>
+          <p className="left-align">{note.content}</p>
         </div>
         <div className="card-action grey lighten-4 grey-text">
           <div>{moment(note.createdAt.toDate()).calendar()}</div>
@@ -39,7 +41,7 @@ const NoteDetail = (props) => {
       </div>
     </div>
   );
-  return noteMarkup
+  return noteMarkup;
 };
 
 export default NoteDetail;

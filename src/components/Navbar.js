@@ -18,10 +18,9 @@ export default class Navbar extends Component {
       clicked: true,
     });
   }
-  handleClickFalse()
-  {
+  handleClickFalse() {
     this.setState({
-      clicked:false
+      clicked: false,
     });
   }
   logout() {
@@ -33,9 +32,27 @@ export default class Navbar extends Component {
         {/* <Router> */}
         <div className="row navbar">
           <div className="col-md-6">
-            <h1 className="title">Weather App</h1>
+            <h4
+              style={{
+                marginTop: "1vw",
+                paddingTop: 0,
+                marginLeft: "-20vw",
+                // paddingLeft: "-10vw",
+              }}
+              className="title"
+            >
+              Weather App
+            </h4>
           </div>
-          <div className="col-md-6">
+          <div
+            className="col-md-6"
+            style={{
+              marginTop: "-.7vw",
+              paddingTop: 0,
+
+              // paddingLeft: "-10vw",
+            }}
+          >
             {this.props.status ? (
               <button className="logs" onClick={this.logout}>
                 {" "}

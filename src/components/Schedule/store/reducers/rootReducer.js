@@ -4,7 +4,7 @@ import { firestoreReducer } from "redux-firestore";
 import noteReducer from "./noteReducer";
 
 const rootReducer = combineReducers({
-  note : noteReducer,
+  note: noteReducer,
   firebase: firebaseReducer,
   firestore: firestoreReducer, // <- needed if using firestore
 });

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import fire from "./config/fire";
-import "./login.css"
-import {Link} from "react-router-dom"
+import "./login.css";
+import { Link } from "react-router-dom";
 export default class Login extends Component {
   constructor(props) {
     super(props);
@@ -21,8 +21,7 @@ export default class Login extends Component {
       .catch((err) => {
         console.log(err);
       });
-      // window.location.reload();
-
+    // window.location.reload();
   }
   signup(e) {
     e.preventDefault();
@@ -49,7 +48,7 @@ export default class Login extends Component {
           <label>Username</label>
           <input
             type="text"
-            id="email" 
+            id="email"
             name="email"
             autoFocus
             required
@@ -67,7 +66,9 @@ export default class Login extends Component {
             onChange={this.handleChange}
           />
           <button onClick={this.signup}>Signup</button>
-          <Link to="/"><button onClick={this.login}>Login</button></Link>
+          <Link to="/">
+            <button onClick={this.login}>Login</button>
+          </Link>
         </div>
       </section>
     );

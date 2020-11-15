@@ -1,23 +1,23 @@
-*{
+* {
   color: black;
 }
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #d3d3d3;
+  background-color: #08074d;
   color: black;
   font-size: 15px;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-    font-size: medium;
+  font-size: medium;
 }
 
 .brand-logo {
@@ -30,12 +30,12 @@ form {
   margin: 60px 20px 0px;
 }
 
-.note{
-  padding:10px;
+.note {
+  padding: 10px;
   margin-bottom: 30px;
 }
 
-.noteslist{
+.noteslist {
   padding: 20px;
   margin-top: 54px;
 }
@@ -78,4 +78,3 @@ form {
     transform: rotate(360deg);
   }
 }
-

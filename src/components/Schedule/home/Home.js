@@ -5,7 +5,15 @@ import { useFirestoreConnect } from "react-redux-firebase";
 import NotesList from "../notes/NotesList";
 import Navbar from "../layout/Navbar";
 import { Fragment } from "react";
+import firebase from "../../../config/fire";
 
+// const uid = firebase.auth().currentUser.uid;
+if (firebase.auth().currentUser !== null) {
+  console.log("hello");
+}
+{
+  console.log("hii");
+}
 const Home = () => {
   useFirestoreConnect([{ collection: "note", orderBy: ["createdAt", "desc"] }]);
   const notes = useSelector((state) => state.firestore.ordered.note);

@@ -54,14 +54,14 @@ export default class Navbar extends Component {
             }}
           >
             {this.props.status ? (
-              <button className="logs" onClick={this.logout}>
+              <button className="logs indigo darken-4" onClick={this.logout}>
                 {" "}
                 Logout
               </button>
             ) : (
               //  (<button className="logs" onClick={this.handleClick}>Login</button>)}
               <Link to="/login">
-                <button className="logs" onClick={this.handleClick}>
+                <button className="logs indigo darken-4" onClick={this.handleClick}>
                   Login
                 </button>
               </Link>

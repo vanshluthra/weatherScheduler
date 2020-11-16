@@ -89,7 +89,7 @@ export default class Display extends Component {
           </div>
           {this.props.status ? (
             <Link to="/schedule">
-              <button>Schedule</button>
+              <button className="btn blue">Schedule</button>
             </Link>
           ) : (
             <div></div>

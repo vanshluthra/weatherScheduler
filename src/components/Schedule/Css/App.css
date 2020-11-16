@@ -1,6 +1,6 @@
-* {
+/* * {
   color: black;
-}
+} */
 
 body {
   margin: 0;
@@ -10,7 +10,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #08074d;
-  color: black;
+  
+  color: white;
   font-size: 15px;
 }
 

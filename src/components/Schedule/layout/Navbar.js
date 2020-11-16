@@ -9,7 +9,7 @@ const Navbar = () => {
 //   };
 
   return (
-    <nav className="purple">
+    <nav className="blue">
       <div className="nav-wrapper">
         <Link to="/schedule" className="brand-logo">
           MyScheduler

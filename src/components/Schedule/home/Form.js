@@ -68,7 +68,7 @@ const Form = () => {
             Schedule Detail
           </label>
         </div>
-        <button className="btn purple">Add</button>
+        <button className="btn blue">Add</button>
       </form>
     </div>
   );

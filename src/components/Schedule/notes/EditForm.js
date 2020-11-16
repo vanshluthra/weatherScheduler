@@ -45,7 +45,7 @@ const EditForm = () => {
             Note Content
           </label>
         </div>
-        <button className="btn purple">Update</button>
+        <button className="btn blue">Update</button>
       </form>
     </div>
     </Fragment>

@@ -51,7 +51,7 @@
   background-image: url(components/Schedule/display.png);
   background-size: cover;
   background-repeat: no-repeat;
-}
+  }
 
 .navbar {
   /* background: linear-gradient(
@@ -59,7 +59,7 @@
     rgb(127, 0, 255, 0.95),
     rgb(225, 0, 255, 0.95)
   ); */
-  background-color: #67c3fc;
+  background-color: #2196f3;
   opacity: 1.2;
   width: 100.5%;
   height: 10%;

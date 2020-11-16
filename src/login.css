@@ -43,11 +43,8 @@ button {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background: linear-gradient(
-    to right,
-    rgb(127, 0, 255, 0.75),
-    rgb(225, 0, 255, 0.75)
-  );
+  background: #08074d
+  ;
   box-shadow: 0 50px 70px -20px rgba(0, 0, 0, 0.8);
 }
 

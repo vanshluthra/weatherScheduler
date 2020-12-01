@@ -48,7 +48,7 @@ button {
   flex-direction: column;
   justify-content: center;
   background-image: linear-gradient(#d44d5c, #bbb3bd);
-  box-shadow: 0.3vw 0.4vw 2vw rgba(0, 0, 0, 0.8);
+  box-shadow: 0.3vw 0.3vw 2vw rgba(0, 0, 0, 0.8);
 }
 
 .login .loginContainer label {

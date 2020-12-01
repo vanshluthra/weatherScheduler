@@ -65,9 +65,9 @@ export default class Login extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <button onClick={this.signup}>Signup</button>
+          <button onClick={this.signup} className="btn blue">Signup</button>
           <Link to="/">
-            <button onClick={this.login}>Login</button>
+            <button onClick={this.login} className="btn blue">Login</button>
           </Link>
         </div>
       </section>

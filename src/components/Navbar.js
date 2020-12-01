@@ -60,7 +60,7 @@ export default class Navbar extends Component {
             ) : (
               //  (<button className="logs" onClick={this.handleClick}>Login</button>)}
               <Link to="/login">
-                <button className="logs" onClick={this.handleClick}>
+                <button className="logs " onClick={this.handleClick}>
                   Login
                 </button>
               </Link>

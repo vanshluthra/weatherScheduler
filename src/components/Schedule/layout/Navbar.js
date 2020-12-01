@@ -4,24 +4,46 @@ import { NavLink, Link } from "react-router-dom";
 //import firebase from "../../config/fbconfig";
 
 const Navbar = () => {
-//   const handleLogout = () => {
-//     firebase.auth().signOut();
-//   };
+  //   const handleLogout = () => {
+  //     firebase.auth().signOut();
+  //   };
 
   return (
-    <nav className="purple">
+    <nav style={{ backgroundColor: "#773344" }}>
       <div className="nav-wrapper">
-        <Link to="/schedule" className="brand-logo">
-          MyScheduler
+        <Link to="/" className="brand-logo">
+          Weather Scheduler
         </Link>
-        <ul id="nav-mobile" className="right hide-on-med-and-down">
-          <li>
-            <NavLink to="/favorites">Important</NavLink>
-          </li>
-          <li>
-            <Link to="/">Weather Dashboard</Link>
-          </li>
-        </ul>
+        <NavLink to="/favorites">
+          <button
+            style={{
+              paddingLeft: ".5vw",
+              paddingRight: ".5vw",
+              paddingTop: ".6VW",
+              width: "10vw",
+              float: "right",
+              marginTop: ".5vw",
+              marginRight: ".5VW",
+            }}
+          >
+            Important
+          </button>
+        </NavLink>
+        <Link to="/schedule">
+          <button
+            style={{
+              paddingLeft: ".5vw",
+              paddingRight: ".5vw",
+              paddingTop: ".6VW",
+              width: "15vw",
+              float: "right",
+              marginTop: ".5vw",
+              marginRight: ".5VW",
+            }}
+          >
+            Weather Dashboard
+          </button>
+        </Link>
       </div>
     </nav>
   );

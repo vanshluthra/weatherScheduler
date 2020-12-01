@@ -33,10 +33,20 @@ const Form = () => {
     <div className="section">
       <form
         onSubmit={submitHandle}
-        className="white classes.container"
+        className="classes.container"
         noValidate
+        style={{
+          alignItems: "center",
+          marginLeft: "auto",
+          marginRight: "auto",
+          // borderWidth: ".5vw",
+          border: ".3vw solid #773344",
+          borderRadius: ".5vw",
+        }}
       >
         <h5 className="grey-text text-darken-3">New Schedule</h5>
+        <br />
+        <br />
         <div className="input-field">
           <TextField
             id="note_title"
@@ -48,27 +58,29 @@ const Form = () => {
             }}
             {...bindTitle}
           />
-          {/* <input
-            id="note_title"
-            type="text"
-            className="validate"
-            {...bindTitle}v
-          /> */}
           <label className="active" htmlFor="note_title">
-            Schedule Time
+            <h5>Schedule Time</h5>
           </label>
         </div>
         <div className="input-field">
+          <label htmlFor="note_content" className="active">
+            <h6>Schedule Detail</h6>
+          </label>
           <textarea
             id="note_content"
             className="materialize-textarea"
             {...bindContent}
           ></textarea>
-          <label htmlFor="note_content" className="active">
-            Schedule Detail
-          </label>
         </div>
-        <button className="btn purple">Add</button>
+        <button
+          className="btn"
+          style={{
+            backgroundColor: "#d44d5c",
+            boxShadow: ".2vw .2vw .2vw black",
+          }}
+        >
+          Add
+        </button>
       </form>
     </div>
   );

@@ -11,13 +11,20 @@ const Note = ({ note }) => {
   };
   const toggleFavHandler = () => {
     dispatch(toggleFav(note));
-  }; 
+  };
   const ediNoteHandler = () => {
-      dispatch({type:'EDIT_NOTE', payload:note})
-  }
+    dispatch({ type: "EDIT_NOTE", payload: note });
+  };
   const heartMarkup = note.favorite ? "turned_in" : "turned_in_not";
   return (
-    <div className="note white">
+    <div
+      className="note"
+      style={{
+        border: ".2vw solid #773344",
+        backgroundColor: "#E5E5E5",
+        borderRadius: ".5VW",
+      }}
+    >
       <div className="right-align">
         <i
           className="material-icons red-text"
@@ -41,7 +48,9 @@ const Note = ({ note }) => {
       <p className="grey-text">{moment(note.createdAt.toDate()).fromNow()}</p>
       <div className="right-align">
         <Link to={`/editform/${note.id}`}>
-          <i className="material-icons black-text" onClick={ediNoteHandler}>edit</i>
+          <i className="material-icons black-text" onClick={ediNoteHandler}>
+            edit
+          </i>
         </Link>
       </div>
     </div>

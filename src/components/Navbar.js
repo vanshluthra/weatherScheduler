@@ -41,7 +41,7 @@ export default class Navbar extends Component {
               }}
               className="title"
             >
-              Weather App
+              Weather Scheduler
             </h4>
           </div>
           <div
@@ -55,7 +55,6 @@ export default class Navbar extends Component {
           >
             {this.props.status ? (
               <button className="logs" onClick={this.logout}>
-                {" "}
                 Logout
               </button>
             ) : (

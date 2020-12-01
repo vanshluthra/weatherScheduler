@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import fire from "../config/fire";
 import { Link } from "react-router-dom";
+import haze from "../components/images/haze.jpg";
+import sunny from "../components/images/sunny.jpg";
 
 export default class Display extends Component {
   state = {
     location: "",
   };
-
   logout() {
     fire.auth().signOut();
   }
@@ -48,14 +49,12 @@ export default class Display extends Component {
                 {this.props.weather.region} , {this.props.weather.country}
               </p>
             </div>
-
-            {/* <div className="col-md-9">
+            <div className="col-md-3 weather-temp">
               <img
-                className="mainImg"
                 src={this.props.weather.img}
-                alt="weather-img"
+                style={{ marginTop: "3vw", height: "9vw", width: "12vw" }}
               />
-            </div> */}
+            </div>
           </div>
 
           <div className="row">
@@ -89,7 +88,7 @@ export default class Display extends Component {
           </div>
           {this.props.status ? (
             <Link to="/schedule">
-              <button>Schedule</button>
+              <button style={{ width: "20vw" }}>Schedule</button>
             </Link>
           ) : (
             <div></div>
@@ -101,3 +100,8 @@ export default class Display extends Component {
     );
   }
 }
+
+// const styles = {
+//   //backgroundImage: `url(${haze})`,
+//   backgroundImage: linearGradient("#D44D5C", "#EE964B"),
+// };

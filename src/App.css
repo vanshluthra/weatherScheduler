@@ -48,7 +48,10 @@
     rgb(127, 0, 255, 0.95),
     rgb(225, 0, 255, 0.95)
   ); */
-  background-image: url(components/Schedule/display.png);
+  /* background-image: url(components/images/display.png); */
+  /* background-image: linear-gradient(red, yellow); */
+  background-image: linear-gradient(#d44d5c, #bbb3bd);
+  background-color: #807182;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -59,7 +62,7 @@
     rgb(127, 0, 255, 0.95),
     rgb(225, 0, 255, 0.95)
   ); */
-  background-color: #67c3fc;
+  background-color: #773344;
   opacity: 1.2;
   width: 100.5%;
   height: 10%;

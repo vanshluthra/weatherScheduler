@@ -65,9 +65,27 @@ export default class Login extends Component {
             value={this.state.password}
             onChange={this.handleChange}
           />
-          <button onClick={this.signup} className="btn blue">Signup</button>
+          <button
+            onClick={this.signup}
+            className="btn"
+            style={{
+              backgroundColor: "#bbb3bd",
+              boxShadow: ".2vw .2vw .2vw black",
+            }}
+          >
+            Signup
+          </button>
           <Link to="/">
-            <button onClick={this.login} className="btn blue">Login</button>
+            <button
+              onClick={this.login}
+              className="btn "
+              style={{
+                backgroundColor: "#bbb3bd",
+                boxShadow: ".2vw .2vw .2vw black",
+              }}
+            >
+              Login
+            </button>
           </Link>
         </div>
       </section>

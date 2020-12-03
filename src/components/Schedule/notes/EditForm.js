@@ -23,7 +23,7 @@ const EditForm = () => {
       <Navbar />
     <div className="section">
       <form onSubmit={submitHandle} className="white">
-        <h5 className="grey-text text-darken-3">New Note</h5>
+        <h5 className="grey-text text-darken-3">Edit Schedule</h5>
         <div className="input-field">
           <input
             id="note_title"
@@ -32,7 +32,7 @@ const EditForm = () => {
             {...bindTitle}
           />
           <label className="active" htmlFor="note_title">
-            Note Title
+            Schedule Time
           </label>
         </div>
         <div className="input-field">
@@ -42,10 +42,13 @@ const EditForm = () => {
             {...bindContent}
           ></textarea>
           <label className="active" htmlFor="note_content">
-            Note Content
+            Schedule Detail
           </label>
         </div>
-        <button className="btn blue">Update</button>
+        <button style={{
+            backgroundColor: "#d44d5c",
+            boxShadow: ".2vw .2vw .2vw black",
+          }}>Update</button>
       </form>
     </div>
     </Fragment>

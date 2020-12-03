@@ -45,7 +45,7 @@ export default class Login extends Component {
     return (
       <section className="login" id="login">
         <div className="loginContainer">
-          <label>Username</label>
+          <label>Email</label>
           <input
             type="text"
             id="email"

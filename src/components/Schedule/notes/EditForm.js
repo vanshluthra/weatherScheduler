@@ -4,12 +4,27 @@ import { updateNote } from "../store/actions/noteAction";
 import useInput from "../customHooks/useInput";
 import { useHistory } from "react-router-dom";
 import Navbar from "../layout/Navbar";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  container: {
+    display: "flex",
+    flexWrap: "wrap",
+  },
+  textField: {
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
+    width: 200,
+  },
+}));
 
 const EditForm = () => {
   const note = useSelector((state) => state.note);
   const [title, bindTitle, resetTitle] = useInput(note.title);
   const [content, bindContent, resetContent] = useInput(note.content);
   const dispatch = useDispatch();
+  const classes = useStyles();
   const history = useHistory();
   const submitHandle = (e) => {
     e.preventDefault();
@@ -25,10 +40,15 @@ const EditForm = () => {
       <form onSubmit={submitHandle} className="white">
         <h5 className="grey-text text-darken-3">Edit Schedule</h5>
         <div className="input-field">
-          <input
+        <TextField
             id="note_title"
-            type="text"
-            className="validate"
+            type="datetime-local"
+            defaultValue="2017-05-24"
+            className={classes.textField}
+            style={{width:"20vw"}}
+            InputLabelProps={{
+              shrink: true,
+            }}
             {...bindTitle}
           />
           <label className="active" htmlFor="note_title">

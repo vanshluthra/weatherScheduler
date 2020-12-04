@@ -53,6 +53,7 @@ const Form = () => {
             type="datetime-local"
             defaultValue="2017-05-24"
             className={classes.textField}
+            style={{width:"20vw"}}
             InputLabelProps={{
               shrink: true,
             }}
